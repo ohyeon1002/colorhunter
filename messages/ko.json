@@ -3,5 +3,21 @@
     "title": "컬러 헌팅",
     "description": "오늘의 색깔을 찾아 사진을 찍고 공유하세요."
   },
-  "UploadButtonCaption": { "text": "올리기" }
+  "UploadButtonCaption": { "text": "올리기" },
+  "Header": {
+    "left": ["홈페이지", "One", "Another"],
+    "right": {
+      "signin": "로그인",
+      "signup": "회원가입",
+      "signout": "로그아웃",
+      "mypage": "마이페이지"
+    }
+  },
+  "Signin": {
+    "signin": "로그인",
+    "pending": "로그인 중…",
+    "email": "이메일",
+    "pw": "패스워드",
+    "signup": "회원가입"
+  }
 }

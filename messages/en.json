@@ -3,5 +3,21 @@
     "title": "Hunt Color",
     "description": "Hunt the color of a day and share your pics."
   },
-  "UploadButtonCaption": { "text": "Upload" }
+  "UploadButtonCaption": { "text": "Upload" },
+  "Header": {
+    "left": ["Home Page", "One", "Another"],
+    "right": {
+      "signin": "Sign in",
+      "signup": "Sign up",
+      "signout": "Sign out",
+      "mypage": "My Page"
+    }
+  },
+  "Signin": {
+    "signin": "Sign in",
+    "pending": "Signing…",
+    "email": "Email",
+    "pw": "Password",
+    "signup": "Sign up"
+  }
 }

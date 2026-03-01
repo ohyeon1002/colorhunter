@@ -3,5 +3,21 @@
     "title": "カラーハンティング",
     "description": "日替わりのカラーを見つけ、写真を共有しよう。"
   },
-  "UploadButtonCaption": { "text": "アップロード" }
+  "UploadButtonCaption": { "text": "アップロード" },
+  "Header": {
+    "left": ["ホームページ", "One", "Another"],
+    "right": {
+      "signin": "ログイン",
+      "signup": "会員登録",
+      "signout": "ログアウト",
+      "mypage": "マイページ"
+    }
+  },
+  "Signin": {
+    "signin": "ログイン",
+    "pending": "ログイン中…",
+    "email": "Eメール",
+    "pw": "パスコード",
+    "signup": "会員登録"
+  }
 }

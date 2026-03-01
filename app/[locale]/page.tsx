@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { auth } from "@/auth";
 import HomeClient from "./HomeClient";
 
 type Props = {
@@ -15,10 +16,11 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Home({ params }: Props) {
+  const session = await auth();
   const { locale } = await params;
   return (
-    <main className="flex h-screen flex-col justify-center items-center">
-      <HomeClient locale={locale} />
-    </main>
+    <>
+      <HomeClient locale={locale} session={session} />
+    </>
   );
 }

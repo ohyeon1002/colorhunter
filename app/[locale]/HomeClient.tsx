@@ -2,13 +2,20 @@
 import { useState } from "react";
 import UploadButton from "./UploadButton";
 import { CldImage } from "next-cloudinary";
+import { Session } from "next-auth";
 
 type UploadResult = {
   public_id: string;
   color?: string;
 };
 
-export default function HomeClient({ locale }: { locale: string }) {
+export default function HomeClient({
+  locale,
+  session,
+}: {
+  locale: string;
+  session: Session | null;
+}) {
   const [uploadResults, setUploadResults] = useState<UploadResult[]>([]);
   //   console.log(uploadResults);
   const ImageList = uploadResults
@@ -23,9 +30,11 @@ export default function HomeClient({ locale }: { locale: string }) {
       ))
     : "";
   return (
-    <>
+    <div className="h-full">
       {ImageList}
-      <UploadButton locale={locale} setUploadResults={setUploadResults} />
-    </>
+      {session && (
+        <UploadButton locale={locale} setUploadResults={setUploadResults} />
+      )}
+    </div>
   );
 }

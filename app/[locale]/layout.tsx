@@ -4,6 +4,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import "./globals.css";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Header from "./Header";
+import { auth } from "@/auth";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +38,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
+  const session = await auth();
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -44,7 +47,14 @@ export default async function RootLayout({
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <div className="flex flex-col w-screen h-screen bg-linear-to-bl/increasing from-primary/70 to-secondary/70 overflow-hidden">
+            <Header locale={locale} session={session} />
+            <main className="flex flex-1 w-full flex-col justify-center items-center">
+              {children}
+            </main>
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -75,7 +75,7 @@ export default function UploadButton({
         text: TEXT,
         buttonCaption: t("text"),
       }}
-      className="btn btn-xl btn-primary">
+      className="btn rounded-4xl btn-xl btn-wide btn-primary">
       {t("text")}
     </CldUploadButton>
   );
